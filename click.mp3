@@ -1,0 +1,15 @@
+<audio id="clickSound" src="click.mp3"></audio>
+
+<script>
+
+document.querySelectorAll("a").forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+document.getElementById("clickSound").play()
+
+})
+
+})
+
+</script>

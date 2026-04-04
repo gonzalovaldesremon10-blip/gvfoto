@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body class="contactBody">
+
+  <header class="contactHeader">
+    <div class="logo">
+      <a href="index.html" aria-label="Volver a inicio">
+        <img src="FOTOS/LOGO/Sin título-1.png" alt="Logo GV Foto">
+      </a>
+    </div>
+
+    <nav aria-label="Navegación principal">
+      <a href="gallery.html">GALERIA</a>
+      <a href="contact.html">CONTACTO</a>
+    </nav>
+  </header>
+
+  <main class="contactMain">
+    <section class="contactSection" aria-label="Información de contacto">
+
+      <div class="contactCard">
+        <p class="contactEyebrow">GV FOTO</p>
+        <h1>Contacto</h1>
+        <p class="contactIntro">
+          Para colaboraciones, sesiones, eventos o cualquier consulta,
+          puedes escribirme a través de cualquiera de estos medios.
+        </p>
+
+        <div class="contactInfoList">
+
+          <div class="contactItem">
+            <span class="contactLabel">Email</span>
+            <a href="mailto:gvfoto850@gmail.com" class="contactValue">
+              gvfoto850@gmail.com
+            </a>
+          </div>
+
+          <div class="contactItem">
+            <span class="contactLabel">Instagram</span>
+            <a href="https://www.instagram.com/gv_foto_/" target="_blank" rel="noopener noreferrer" class="contactValue">
+              @gv_foto_
+            </a>
+          </div>
+
+          <div class="contactItem">
+            <span class="contactLabel">Teléfono</span>
+            <a href="tel:+34605413204" class="contactValue">
+              605 41 32 04
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <audio id="clickSound" src="click.mp3"></audio>
+
+  <script>
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        const sound = document.getElementById("clickSound");
+        if (sound) {
+          sound.currentTime = 0;
+          sound.play().catch(() => {});
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

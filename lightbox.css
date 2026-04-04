@@ -1,0 +1,134 @@
+body.lightbox-open{
+  overflow:hidden;
+}
+
+
+/* ---------- GRID FOTOS ---------- */
+
+.photoGrid{
+  padding-top:120px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:10px;
+  width:95%;
+  margin:auto;
+}
+
+.photoGrid img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  cursor:pointer;
+  transition:transform 0.4s ease, filter 0.4s ease;
+  filter:contrast(90%);
+  display:block;
+}
+
+.photoGrid img:hover{
+  transform:scale(1.05);
+  filter:contrast(110%);
+}
+
+
+/* ---------- LIGHTBOX ---------- */
+
+.lightbox{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.75);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+  animation:fadeCinema 0.3s ease;
+}
+
+.lightbox.active{
+  display:flex;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  box-shadow:0 10px 40px rgba(0,0,0,0.6);
+  object-fit:contain;
+  display:block;
+}
+
+
+/* ---------- FLECHAS ---------- */
+
+.arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:40px;
+  color:white;
+  cursor:pointer;
+  padding:20px;
+  user-select:none;
+  transition:transform 0.2s ease, opacity 0.2s ease;
+  line-height:1;
+}
+
+.arrow:hover{
+  transform:translateY(-50%) scale(1.2);
+  opacity:0.85;
+}
+
+.arrow.left{
+  left:20px;
+}
+
+.arrow.right{
+  right:20px;
+}
+
+
+/* ---------- ANIMACION ---------- */
+
+@keyframes fadeCinema{
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:700px){
+
+  .photoGrid{
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:8px;
+    width:94%;
+  }
+
+  .photoGrid img{
+    height:180px;
+  }
+
+  .lightbox img{
+    max-width:90%;
+    max-height:85%;
+  }
+
+  .arrow{
+    font-size:32px;
+    padding:14px;
+  }
+
+  .arrow.left{
+    left:8px;
+  }
+
+  .arrow.right{
+    right:8px;
+  }
+}

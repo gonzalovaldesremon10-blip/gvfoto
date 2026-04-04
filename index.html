@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="SQZrFsFPUbsTqXv_zO3Eh97ZtX0-ibtAlzUZ7de-7RY" />
+  <title>Portfolio</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="index.html" aria-label="Volver a inicio">
+        <img src="FOTOS/LOGO/Sin título-1.png" alt="Logo GV Foto">
+      </a>
+    </div>
+
+    <nav aria-label="Navegación principal">
+      <a href="gallery.html">GALERIA</a>
+      <a href="contact.html">CONTACTO</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="home" aria-label="Carrusel de imágenes destacadas">
+      <div class="carousel">
+        <img src="FOTOS/AUTOMOVILISMO/foto 1.jpg" class="slide active" alt="">
+        <img src="FOTOS/CABALLOS/caballo 1.jpg" class="slide" alt="">
+        <img src="FOTOS/CABALLOS/caballo 2.jpg" class="slide" alt="">
+        <img src="FOTOS/CLASICOS/AF8A9698.jpg" class="slide" alt="">
+        <img src="FOTOS/CLASICOS/clasicos12.jpg" class="slide" alt="">
+        <img src="FOTOS/CLASICOS/clasicos13.jpg" class="slide" alt="">
+        <img src="FOTOS/CLASICOS/clasicos43.jpg" class="slide" alt="">
+        <img src="FOTOS/CLASICOS/clasicos46.jpg" class="slide" alt="">
+        <img src="FOTOS/CLASICOS/clasicos64.jpg" class="slide" alt="">
+        <img src="FOTOS/CLASICOS/clasicos80.jpg" class="slide" alt="">
+        <img src="FOTOS/DEPORTIVOS/9T3A5710-Enhanced-NR.jpg" class="slide" alt="">
+        <img src="FOTOS/DEPORTIVOS/deportivos2.jpg" class="slide" alt="">
+        <img src="FOTOS/DEPORTIVOS/deportivos14.jpg" class="slide" alt="">
+        <img src="FOTOS/DEPORTIVOS/deportivos17.jpg" class="slide" alt="">
+        <img src="FOTOS/DEPORTIVOS/deportivos25.jpg" class="slide" alt="">
+        <img src="FOTOS/MOTOCICLISMO/9T3A9289-Enhanced-NR.jpg" class="slide" alt="">
+        <img src="FOTOS/MOTOCICLISMO/moto 3.jpg" class="slide" alt="">
+        <img src="FOTOS/MOTOCICLISMO/moto 9.jpg" class="slide" alt="">
+        <img src="FOTOS/MOTOCICLISMO/moto 17.jpg" class="slide" alt="">
+        <img src="FOTOS/TOROS/9T3A2902-Enhanced-NR.jpg" class="slide" alt="">
+        <img src="FOTOS/TOROS/9T3A2939-Enhanced-NR.jpg" class="slide" alt="">
+        <img src="FOTOS/TOROS/1692721420644.jpg" class="slide" alt="">
+        <img src="FOTOS/URBANA/urbana29.jpg" class="slide" alt="">
+        <img src="FOTOS/URBANA/urbana35.jpg" class="slide" alt="">
+        <img src="FOTOS/URBANA/urbana15.jpg" class="slide" alt="">
+      </div>
+    </section>
+  </main>
+
+  <audio id="clickSound" src="click.mp3"></audio>
+
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    let currentSlide = 0;
+    let interval = null;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove("active"));
+      slides[index].classList.add("active");
+    }
+
+    function nextSlide() {
+      if (slides.length === 0) return;
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function startCarousel() {
+      if (slides.length === 0) return;
+      clearInterval(interval);
+      interval = setInterval(nextSlide, 8000);
+    }
+
+    startCarousel();
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        clearInterval(interval);
+      } else {
+        startCarousel();
+      }
+    });
+
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        const sound = document.getElementById("clickSound");
+        if (sound) {
+          sound.currentTime = 0;
+          sound.play().catch(() => {});
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

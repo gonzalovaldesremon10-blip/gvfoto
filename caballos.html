@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Caballos | GV Foto</title>
+  <meta name="description" content="Fotografía de caballos por GV Foto. Imágenes elegantes y naturales del mundo ecuestre.">
+
+  <link rel="canonical" href="https://gonzalovaldesremon10-blip.github.io/gvfoto/caballos.html">
+
+  <meta property="og:url" content="https://gonzalovaldesremon10-blip.github.io/gvfoto/caballos.html">
+  <meta property="og:title" content="Caballos | GV Foto">
+  <meta property="og:description" content="Galería de fotografía de caballos de GV Foto.">
+  <meta property="og:image" content="https://gonzalovaldesremon10-blip.github.io/gvfoto/FOTOS/LOGO/Sin%20t%C3%ADtulo-1.png">
+
+  <link rel="icon" type="image/png" href="FOTOS/LOGO/Sin título-1.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="lightbox.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+  <main>
+    <section class="photoGrid" aria-label="Galería de caballos">
+
+      <img src="FOTOS/CABALLOS/thumb/caballo 1.jpg" data-full="FOTOS/CABALLOS/caballo 1.jpg" alt="" loading="lazy">
+        <img src="FOTOS/CABALLOS/thumb/caballo 2.jpg" data-full="FOTOS/CABALLOS/caballo 2.jpg" alt="" loading="lazy">
+         <img src="FOTOS/CABALLOS/thumb/caballo 3.jpg" data-full="FOTOS/CABALLOS/caballo 3.jpg" alt="" loading="lazy">
+         <img src="FOTOS/CABALLOS/thumb/caballo 4.jpg" data-full="FOTOS/CABALLOS/caballo 4.jpg" alt="" loading="lazy">
+      <img src="FOTOS/CABALLOS/thumb/9T3A4048.jpg" data-full="FOTOS/CABALLOS/9T3A4048.jpg" alt="" loading="lazy">
+      <img src="FOTOS/CABALLOS/thumb/9T3A4057.jpg" data-full="FOTOS/CABALLOS/9T3A4057.jpg" alt="" loading="lazy">
+      <img src="FOTOS/CABALLOS/thumb/9T3A4074.jpg" data-full="FOTOS/CABALLOS/9T3A4074.jpg" alt="" loading="lazy">
+      <img src="FOTOS/CABALLOS/thumb/9T3A4101.jpg" data-full="FOTOS/CABALLOS/9T3A4101.jpg" alt="" loading="lazy">
+      <img src="FOTOS/CABALLOS/thumb/9T3A4128.jpg" data-full="FOTOS/CABALLOS/9T3A4128.jpg" alt="" loading="lazy">
+      <img src="FOTOS/CABALLOS/thumb/9T3A4135.jpg" data-full="FOTOS/CABALLOS/9T3A4135.jpg" alt="" loading="lazy">
+
+      <img src="FOTOS/CABALLOS/thumb/9T3A4151.jpg" data-full="FOTOS/CABALLOS/9T3A4151.jpg" alt="" loading="lazy">
+      <img src="FOTOS/CABALLOS/thumb/9T3A4172.jpg" data-full="FOTOS/CABALLOS/9T3A4172.jpg" alt="" loading="lazy">
+      <img src="FOTOS/CABALLOS/thumb/9T3A4181.jpg" data-full="FOTOS/CABALLOS/9T3A4181.jpg" alt="" loading="lazy">
+      <img src="FOTOS/CABALLOS/thumb/9T3A4184.jpg" data-full="FOTOS/CABALLOS/9T3A4184.jpg" alt="" loading="lazy">
+      <img src="FOTOS/CABALLOS/thumb/9T3A4190.jpg" data-full="FOTOS/CABALLOS/9T3A4190.jpg" alt="" loading="lazy">
+      <img src="FOTOS/CABALLOS/thumb/9T3A4194.jpg" data-full="FOTOS/CABALLOS/9T3A4194.jpg" alt="" loading="lazy">
+      <img src="FOTOS/CABALLOS/thumb/9T3A4196.jpg" data-full="FOTOS/CABALLOS/9T3A4196.jpg" alt="" loading="lazy">
+      <img src="FOTOS/CABALLOS/thumb/9T3A4201.jpg" data-full="FOTOS/CABALLOS/9T3A4201.jpg" alt="" loading="lazy">
+      <img src="FOTOS/CABALLOS/thumb/9T3A4209.jpg" data-full="FOTOS/CABALLOS/9T3A4209.jpg" alt="" loading="lazy">
+      <img src="FOTOS/CABALLOS/thumb/9T3A4239.jpg" data-full="FOTOS/CABALLOS/9T3A4239.jpg" alt="" loading="lazy">
+
+    </section>
+  </main>
+
+  <div class="lightbox">
+    <span class="arrow left">&#10094;</span>
+    <img alt="">
+    <span class="arrow right">&#10095;</span>
+  </div>
+
+  <audio id="clickSound" src="click.mp3"></audio>
+
+  <script src="lightbox.js"></script>
+
+  <script>
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        const sound = document.getElementById("clickSound");
+        if (sound) {
+          sound.currentTime = 0;
+          sound.play().catch(() => {});
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

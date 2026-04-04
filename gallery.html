@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="index.html" aria-label="Volver a inicio">
+        <img src="FOTOS/LOGO/Sin título-1.png" alt="Logo GV Foto">
+      </a>
+    </div>
+
+    <nav aria-label="Navegación principal">
+      <a href="gallery.html">GALERIA</a>
+      <a href="contact.html">CONTACTO</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="galleryPage galleryPageOlympic" aria-label="Categorías de galería">
+      <div class="polaroidGrid olympicGrid">
+
+        <a href="automovilismo.html" class="polaroid olympicCard card-1" aria-label="Ir a Automovilismo">
+          <img src="FOTOS/AUTOMOVILISMO/thumb/foto 1.jpg" alt="Automovilismo" loading="lazy">
+          <p>AUTOMOVILISMO</p>
+        </a>
+
+        <a href="caballos.html" class="polaroid olympicCard card-2" aria-label="Ir a Caballos">
+          <img src="FOTOS/CABALLOS/thumb/caballo 3.jpg" alt="Caballos" loading="lazy">
+          <p>CABALLOS</p>
+        </a>
+
+        <a href="clasicos.html" class="polaroid olympicCard card-3" aria-label="Ir a Clásicos">
+          <img src="FOTOS/CLASICOS/thumb/clasicos64.jpg" alt="Clásicos" loading="lazy">
+          <p>CLASICOS</p>
+        </a>
+
+        <a href="deportivos.html" class="polaroid olympicCard card-4" aria-label="Ir a Deportivos">
+          <img src="FOTOS/DEPORTIVOS/thumb/deportivos1.jpg" alt="Deportivos" loading="lazy">
+          <p>DEPORTIVOS</p>
+        </a>
+
+        <a href="motociclismo.html" class="polaroid olympicCard card-5" aria-label="Ir a Motociclismo">
+          <img src="FOTOS/MOTOCICLISMO/thumb/moto 18.jpg" alt="Motociclismo" loading="lazy">
+          <p>MOTOCICLISMO</p>
+        </a>
+
+        <a href="toros.html" class="polaroid olympicCard card-6" aria-label="Ir a Toros">
+          <img src="FOTOS/TOROS/thumb/toro 14.jpg" alt="Toros" loading="lazy">
+          <p>TOROS</p>
+        </a>
+
+        <a href="urbana.html" class="polaroid olympicCard card-7" aria-label="Ir a Urbana">
+          <img src="FOTOS/URBANA/thumb/urbana15.jpg" alt="Urbana" loading="lazy">
+          <p>URBANA</p>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <audio id="clickSound" src="click.mp3"></audio>
+
+  <script>
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        const sound = document.getElementById("clickSound");
+        if (sound) {
+          sound.currentTime = 0;
+          sound.play().catch(() => {});
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
