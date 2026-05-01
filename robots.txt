@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gonzalovaldesremon10-blip.github.io/gvfoto/sitemap.xml
+Sitemap: https://gvfoto.com/sitemap.xml
