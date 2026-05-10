@@ -191,6 +191,50 @@ nav a:hover::after{
   transform:scale(1.05);
 }
 
+/* ---------- GALERIA DE CATEGORIA (.photoGrid) ---------- */
+
+.photoGrid{
+  padding:100px 20px 40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:12px;
+  max-width:1600px;
+  margin:0 auto;
+}
+
+.photoGrid picture,
+.photoGrid img{
+  display:block;
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  cursor:pointer;
+  transition:transform 0.35s ease, opacity 0.3s ease;
+  border-radius:2px;
+}
+
+.photoGrid picture img{
+  height:100%;
+}
+
+.photoGrid picture:hover img,
+.photoGrid img:hover{
+  transform:scale(1.03);
+  opacity:0.92;
+}
+
+@media (max-width: 700px){
+  .photoGrid{
+    grid-template-columns:repeat(2, 1fr);
+    gap:6px;
+    padding:80px 8px 20px;
+  }
+  .photoGrid picture,
+  .photoGrid img{
+    height:180px;
+  }
+}
+
 
 /* ---------- GALERIA POLAROID ---------- */
 
