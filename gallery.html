@@ -9,7 +9,7 @@
 
   <link rel="canonical" href="https://gvfoto.com/gallery.html">
 
-  <!-- Open Graph (para Google y redes) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Galería | GV Foto">
   <meta property="og:description" content="Descubre la galería de fotografía de GV Foto.">
   <meta property="og:image" content="https://gvfoto.com/FOTOS/LOGO/Sin%20t%C3%ADtulo-1.png">
@@ -23,10 +23,12 @@
   <link rel="stylesheet" href="/styles.css">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="gallery-bento-page">
 
   <header>
     <div class="logo">
@@ -42,49 +44,95 @@
   </header>
 
   <main>
-    <section class="galleryPage galleryPageOlympic" aria-label="Categorías de galería">
-      <div class="polaroidGrid olympicGrid">
+    <section class="gallery-intro">
+      <h1>Galería</h1>
+      <p>Siete miradas · un mismo lente</p>
+    </section>
 
-        <a href="automovilismo.html" class="polaroid olympicCard card-1" aria-label="Ir a Automovilismo">
-          <picture><source srcset="FOTOS/AUTOMOVILISMO/foto 1-medium.webp" type="image/webp"><img src="FOTOS/AUTOMOVILISMO/foto 1-medium.webp" alt="Automovilismo" loading="lazy" decoding="async"></picture>
-          <p>AUTOMOVILISMO</p>
-        </a>
+    <section class="bento" aria-label="Categorías de galería">
 
-        <a href="caballos.html" class="polaroid olympicCard card-2" aria-label="Ir a Caballos">
-          <picture><source srcset="FOTOS/CABALLOS/caballo 3-medium.webp" type="image/webp"><img src="FOTOS/CABALLOS/caballo 3-medium.webp" alt="Caballos" loading="lazy" decoding="async"></picture>
-          <p>CABALLOS</p>
-        </a>
+      <a href="/automovilismo.html" class="bento-card bento-feature bento-1" aria-label="Ir a Automovilismo">
+        <picture>
+          <source media="(min-width: 1200px)" srcset="/FOTOS/AUTOMOVILISMO/foto 1-large.webp" type="image/webp">
+          <source media="(min-width: 600px)" srcset="/FOTOS/AUTOMOVILISMO/foto 1-medium.webp" type="image/webp">
+          <img src="/FOTOS/AUTOMOVILISMO/foto 1-small.webp" alt="Automovilismo" loading="eager" decoding="async">
+        </picture>
+        <span class="bento-label">
+          <span class="bento-num">01</span>
+          <span class="bento-name">Automovilismo</span>
+        </span>
+      </a>
 
-        <a href="clasicos.html" class="polaroid olympicCard card-3" aria-label="Ir a Clásicos">
-          <picture><source srcset="FOTOS/CLASICOS/clasicos64-medium.webp" type="image/webp"><img src="FOTOS/CLASICOS/clasicos64-medium.webp" alt="Clásicos" loading="lazy" decoding="async"></picture>
-          <p>CLASICOS</p>
-        </a>
+      <a href="/caballos.html" class="bento-card bento-2" aria-label="Ir a Caballos">
+        <picture>
+          <source media="(min-width: 600px)" srcset="/FOTOS/CABALLOS/caballo 3-medium.webp" type="image/webp">
+          <img src="/FOTOS/CABALLOS/caballo 3-small.webp" alt="Caballos" loading="lazy" decoding="async">
+        </picture>
+        <span class="bento-label">
+          <span class="bento-num">02</span>
+          <span class="bento-name">Caballos</span>
+        </span>
+      </a>
 
-        <a href="deportivos.html" class="polaroid olympicCard card-4" aria-label="Ir a Deportivos">
-          <picture><source srcset="FOTOS/DEPORTIVOS/deportivos1-medium.webp" type="image/webp"><img src="FOTOS/DEPORTIVOS/deportivos1-medium.webp" alt="Deportivos" loading="lazy" decoding="async"></picture>
-          <p>DEPORTIVOS</p>
-        </a>
+      <a href="/clasicos.html" class="bento-card bento-3" aria-label="Ir a Clásicos">
+        <picture>
+          <source media="(min-width: 600px)" srcset="/FOTOS/CLASICOS/clasicos64-medium.webp" type="image/webp">
+          <img src="/FOTOS/CLASICOS/clasicos64-small.webp" alt="Clásicos" loading="lazy" decoding="async">
+        </picture>
+        <span class="bento-label">
+          <span class="bento-num">03</span>
+          <span class="bento-name">Clásicos</span>
+        </span>
+      </a>
 
-        <a href="motociclismo.html" class="polaroid olympicCard card-5" aria-label="Ir a Motociclismo">
-          <picture><source srcset="FOTOS/MOTOCICLISMO/moto 18-medium.webp" type="image/webp"><img src="FOTOS/MOTOCICLISMO/moto 18-medium.webp" alt="Motociclismo" loading="lazy" decoding="async"></picture>
-          <p>MOTOCICLISMO</p>
-        </a>
+      <a href="/deportivos.html" class="bento-card bento-4" aria-label="Ir a Deportivos">
+        <picture>
+          <source media="(min-width: 600px)" srcset="/FOTOS/DEPORTIVOS/deportivos1-medium.webp" type="image/webp">
+          <img src="/FOTOS/DEPORTIVOS/deportivos1-small.webp" alt="Deportivos" loading="lazy" decoding="async">
+        </picture>
+        <span class="bento-label">
+          <span class="bento-num">04</span>
+          <span class="bento-name">Deportivos</span>
+        </span>
+      </a>
 
-        <a href="toros.html" class="polaroid olympicCard card-6" aria-label="Ir a Toros">
-          <picture><source srcset="FOTOS/TOROS/toro 14-medium.webp" type="image/webp"><img src="FOTOS/TOROS/toro 14-medium.webp" alt="Toros" loading="lazy" decoding="async"></picture>
-          <p>TOROS</p>
-        </a>
+      <a href="/motociclismo.html" class="bento-card bento-5" aria-label="Ir a Motociclismo">
+        <picture>
+          <source media="(min-width: 600px)" srcset="/FOTOS/MOTOCICLISMO/moto 18-medium.webp" type="image/webp">
+          <img src="/FOTOS/MOTOCICLISMO/moto 18-small.webp" alt="Motociclismo" loading="lazy" decoding="async">
+        </picture>
+        <span class="bento-label">
+          <span class="bento-num">05</span>
+          <span class="bento-name">Motociclismo</span>
+        </span>
+      </a>
 
-        <a href="urbana.html" class="polaroid olympicCard card-7" aria-label="Ir a Urbana">
-          <picture><source srcset="FOTOS/URBANA/urbana15-medium.webp" type="image/webp"><img src="FOTOS/URBANA/urbana15-medium.webp" alt="Urbana" loading="lazy" decoding="async"></picture>
-          <p>URBANA</p>
-        </a>
+      <a href="/toros.html" class="bento-card bento-6" aria-label="Ir a Toros">
+        <picture>
+          <source media="(min-width: 600px)" srcset="/FOTOS/TOROS/toro 14-medium.webp" type="image/webp">
+          <img src="/FOTOS/TOROS/toro 14-small.webp" alt="Toros" loading="lazy" decoding="async">
+        </picture>
+        <span class="bento-label">
+          <span class="bento-num">06</span>
+          <span class="bento-name">Toros</span>
+        </span>
+      </a>
 
-      </div>
+      <a href="/urbana.html" class="bento-card bento-7" aria-label="Ir a Urbana">
+        <picture>
+          <source media="(min-width: 600px)" srcset="/FOTOS/URBANA/urbana15-medium.webp" type="image/webp">
+          <img src="/FOTOS/URBANA/urbana15-small.webp" alt="Urbana" loading="lazy" decoding="async">
+        </picture>
+        <span class="bento-label">
+          <span class="bento-num">07</span>
+          <span class="bento-name">Urbana</span>
+        </span>
+      </a>
+
     </section>
   </main>
 
-  <audio id="clickSound" src="click.mp3"></audio>
+  <audio id="clickSound" src="/click.mp3" preload="none"></audio>
 
   <script>
     document.querySelectorAll("a").forEach(link => {
