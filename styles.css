@@ -150,6 +150,7 @@ nav a:hover::after{
   align-items:center;
   text-align:center;
   padding:0 20px;
+  padding-bottom:7vh;
   pointer-events:none;
   background:linear-gradient(
     to bottom,
@@ -463,6 +464,24 @@ body.contact-page header{
   pointer-events:none;
 }
 
+/* Firma "gv." vertical sobre la foto, estilo Lovable */
+.photo-signature{
+  position:absolute;
+  left:2.5rem;
+  top:50%;
+  transform:translateY(-50%);
+  font-family:"Playfair Display", serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(2.5rem, 4vw, 4rem);
+  color:rgba(245, 241, 232, 0.35);
+  letter-spacing:0.02em;
+  line-height:1;
+  z-index:2;
+  pointer-events:none;
+  user-select:none;
+}
+
 /* ---------- COLUMNA CONTENIDO ---------- */
 .contact-content{
   background:#0b4a45;
@@ -614,6 +633,13 @@ body.contact-page header{
     height:45vh;
     min-height:300px;
   }
+  .photo-signature{
+    left:1.5rem;
+    top:auto;
+    bottom:1.5rem;
+    transform:none;
+    font-size:2.5rem;
+  }
   .contact-content{
     padding:4rem clamp(1.5rem, 5vw, 4rem);
   }
@@ -624,6 +650,11 @@ body.contact-page header{
   .contact-image{
     height:38vh;
     min-height:240px;
+  }
+  .photo-signature{
+    left:1.25rem;
+    bottom:1.25rem;
+    font-size:2rem;
   }
   .contact-content{
     padding:3rem 1.5rem 4rem;
@@ -877,6 +908,10 @@ body.contact-page header{
    ============================================================= */
 
 /* Header transparente también en la página de galería bento */
+body.gallery-bento-page{
+  height:100vh;
+  overflow:hidden;
+}
 body.gallery-bento-page header{
   background:linear-gradient(
     to bottom,
@@ -887,32 +922,34 @@ body.gallery-bento-page header{
 
 /* Intro con título grande */
 .gallery-intro{
-  padding:7rem 2.5rem 1.5rem;
+  padding:5.5rem 2.5rem 0.8rem;
   text-align:center;
 }
 .gallery-intro h1{
   font-family:"Playfair Display", serif;
   font-weight:400;
-  font-size:clamp(1.8rem, 3vw, 2.6rem);
+  font-size:clamp(1.5rem, 2.4vw, 2.2rem);
   letter-spacing:0.05em;
   color:#fff;
 }
 .gallery-intro p{
-  margin-top:0.5rem;
-  font-size:0.8rem;
+  margin-top:0.4rem;
+  font-size:0.72rem;
   letter-spacing:0.3em;
   text-transform:uppercase;
-  opacity:0.65;
+  opacity:0.6;
   color:#fff;
 }
 
-/* Grid bento */
+/* Grid bento — 3 filas que entran en lo que queda de pantalla */
 .bento{
   display:grid;
   gap:8px;
-  padding:1rem 2.5rem 2.5rem;
+  padding:0.8rem 1.2rem 1.2rem;
   grid-template-columns:repeat(4, 1fr);
-  grid-template-rows:repeat(3, minmax(180px, 28vh));
+  /* Calculamos el alto para que el bento llene exactamente lo que queda
+     después del header + intro + paddings (~150px) */
+  grid-template-rows:repeat(3, calc((100vh - 170px) / 3));
   grid-template-areas:
     "a a b c"
     "a a d e"
@@ -1002,10 +1039,10 @@ body.gallery-bento-page header{
 .bento-7{ grid-area:g; }   /* URBANA */
 
 /* TABLET */
-@media (max-width: 1024px){
+@media (max-width: 1024px) and (min-width: 641px){
   .bento{
     grid-template-columns:repeat(3, 1fr);
-    grid-template-rows:repeat(4, minmax(180px, 24vh));
+    grid-template-rows:repeat(4, calc((100vh - 170px) / 4));
     grid-template-areas:
       "a a b"
       "a a c"
@@ -1016,13 +1053,23 @@ body.gallery-bento-page header{
 
 /* MÓVIL */
 @media (max-width: 640px){
+  body.gallery-bento-page{
+    height:auto;
+    overflow:auto;
+  }
   .gallery-intro{
-    padding:5.5rem 1.25rem 1rem;
+    padding:5rem 1rem 0.5rem;
+  }
+  .gallery-intro h1{
+    font-size:1.6rem;
+  }
+  .gallery-intro p{
+    font-size:0.65rem;
   }
   .bento{
-    padding:0.75rem 1rem 1.5rem;
+    padding:0.6rem 0.6rem 1rem;
     grid-template-columns:repeat(2, 1fr);
-    grid-template-rows:repeat(5, minmax(160px, 22vh));
+    grid-template-rows:repeat(5, 22vh);
     grid-template-areas:
       "a a"
       "b c"
@@ -1032,7 +1079,17 @@ body.gallery-bento-page header{
     gap:6px;
   }
   .bento-label{
-    left:1rem;
-    bottom:0.9rem;
+    left:0.9rem;
+    bottom:0.8rem;
+  }
+  .bento-num{
+    font-size:0.55rem;
+    margin-bottom:0.25rem;
+  }
+  .bento-name{
+    font-size:1.05rem;
+  }
+  .bento-feature .bento-name{
+    font-size:1.5rem;
   }
 }
