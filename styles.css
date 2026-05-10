@@ -910,7 +910,10 @@ body.contact-page header{
 /* Header transparente también en la página de galería bento */
 body.gallery-bento-page{
   height:100vh;
+  height:100dvh;            /* iPhone respeta esto, evita el "cut off" del bottom bar */
   overflow:hidden;
+  display:flex;
+  flex-direction:column;
 }
 body.gallery-bento-page header{
   background:linear-gradient(
@@ -919,37 +922,46 @@ body.gallery-bento-page header{
     rgba(11,74,69,0) 100%
   );
 }
+body.gallery-bento-page main{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  min-height:0;             /* permite que los hijos se compriman */
+  padding-top:70px;         /* deja sitio para el header fijo */
+}
 
 /* Intro con título grande */
 .gallery-intro{
-  padding:5.5rem 2.5rem 0.8rem;
+  flex:0 0 auto;
+  padding:0.5rem 2.5rem 0.6rem;
   text-align:center;
 }
 .gallery-intro h1{
   font-family:"Playfair Display", serif;
   font-weight:400;
-  font-size:clamp(1.5rem, 2.4vw, 2.2rem);
+  font-size:clamp(1.4rem, 2.2vw, 2rem);
   letter-spacing:0.05em;
   color:#fff;
+  margin:0;
 }
 .gallery-intro p{
-  margin-top:0.4rem;
-  font-size:0.72rem;
+  margin-top:0.3rem;
+  font-size:0.7rem;
   letter-spacing:0.3em;
   text-transform:uppercase;
   opacity:0.6;
   color:#fff;
 }
 
-/* Grid bento — 3 filas que entran en lo que queda de pantalla */
+/* Grid bento — flex:1 para que ocupe todo el espacio que sobre */
 .bento{
+  flex:1;
+  min-height:0;
   display:grid;
   gap:8px;
-  padding:0.8rem 1.2rem 1.2rem;
+  padding:0.4rem 1.2rem 1rem;
   grid-template-columns:repeat(4, 1fr);
-  /* Calculamos el alto para que el bento llene exactamente lo que queda
-     después del header + intro + paddings (~150px) */
-  grid-template-rows:repeat(3, calc((100vh - 170px) / 3));
+  grid-template-rows:repeat(3, 1fr);
   grid-template-areas:
     "a a b c"
     "a a d e"
@@ -1042,7 +1054,7 @@ body.gallery-bento-page header{
 @media (max-width: 1024px) and (min-width: 641px){
   .bento{
     grid-template-columns:repeat(3, 1fr);
-    grid-template-rows:repeat(4, calc((100vh - 170px) / 4));
+    grid-template-rows:repeat(4, 1fr);
     grid-template-areas:
       "a a b"
       "a a c"
@@ -1055,41 +1067,55 @@ body.gallery-bento-page header{
 @media (max-width: 640px){
   body.gallery-bento-page{
     height:auto;
+    height:auto;
     overflow:auto;
+    display:block;
+  }
+  body.gallery-bento-page main{
+    flex:initial;
+    display:block;
+    padding-top:80px;
   }
   .gallery-intro{
-    padding:5rem 1rem 0.5rem;
+    padding:0.5rem 1rem 0.6rem;
   }
   .gallery-intro h1{
-    font-size:1.6rem;
+    font-size:1.5rem;
   }
   .gallery-intro p{
-    font-size:0.65rem;
+    font-size:0.62rem;
   }
   .bento{
-    padding:0.6rem 0.6rem 1rem;
+    flex:initial;
+    padding:0.5rem 0.5rem 1rem;
     grid-template-columns:repeat(2, 1fr);
-    grid-template-rows:repeat(5, 22vh);
+    /* AUTOMOVILISMO grande arriba (2 cols) + 6 cards en pares de 2 cols */
+    grid-template-rows:30vh repeat(3, 17vh);
     grid-template-areas:
       "a a"
       "b c"
       "d e"
-      "f f"
-      "g e";
-    gap:6px;
+      "f g";
+    gap:5px;
   }
+  /* Resetear MOTOCICLISMO y TOROS para que ocupen 1 col cada una en móvil */
+  .bento-5{ grid-area:e; }   /* MOTOCICLISMO */
+  .bento-6{ grid-area:f; }   /* TOROS */
+  .bento-7{ grid-area:g; }   /* URBANA */
+
   .bento-label{
-    left:0.9rem;
-    bottom:0.8rem;
+    left:0.7rem;
+    bottom:0.6rem;
   }
   .bento-num{
-    font-size:0.55rem;
-    margin-bottom:0.25rem;
+    font-size:0.5rem;
+    margin-bottom:0.2rem;
+    letter-spacing:0.3em;
   }
   .bento-name{
-    font-size:1.05rem;
+    font-size:0.95rem;
   }
   .bento-feature .bento-name{
-    font-size:1.5rem;
+    font-size:1.6rem;
   }
 }
