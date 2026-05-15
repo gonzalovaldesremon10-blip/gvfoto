@@ -18,12 +18,15 @@
   <link rel="shortcut icon" href="/FOTOS/LOGO/Sin título-1.png">
 
   <link rel="stylesheet" href="/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
-<body class="contactBody">
+<body class="contact-page">
 
-  <header class="contactHeader">
+  <header>
     <div class="logo">
       <a href="/" aria-label="Volver a inicio">
         <img src="/FOTOS/LOGO/Sin título-1.png" alt="Logo GV Foto">
@@ -36,47 +39,81 @@
     </nav>
   </header>
 
-  <main class="contactMain">
-    <section class="contactSection" aria-label="Información de contacto">
+  <main class="contact-split">
 
-      <div class="contactCard">
-        <p class="contactEyebrow">GV FOTO</p>
-        <h1>Contacto</h1>
-        <p class="contactIntro">
-          Para colaboraciones, sesiones, eventos o cualquier consulta,
-          puedes escribirme a través de cualquiera de estos medios.
-        </p>
+    <!-- Columna izquierda: foto -->
+    <div class="contact-image">
+      <picture>
+        <source media="(min-width: 1200px)" srcset="/FOTOS/URBANA/20230724130911__MG_0033-large.webp" type="image/webp">
+        <source media="(min-width: 600px)" srcset="/FOTOS/URBANA/20230724130911__MG_0033-medium.webp" type="image/webp">
+        <img src="/FOTOS/URBANA/20230724130911__MG_0033-small.webp" alt="" loading="eager" decoding="async">
+      </picture>
+      <span class="photo-signature" aria-hidden="true">gv.</span>
+    </div>
 
-        <div class="contactInfoList">
+    <!-- Columna derecha: contenido -->
+    <div class="contact-content">
 
-          <div class="contactItem">
-            <span class="contactLabel">Email</span>
-            <a href="mailto:gvfoto850@gmail.com" class="contactValue">
-              gvfoto850@gmail.com
-            </a>
+      <p class="contact-eyebrow"><span class="eyebrow-line"></span>PONTE EN CONTACTO</p>
+
+      <h1 class="contact-title">Hablemos<span class="dot">.</span></h1>
+
+      <p class="contact-intro">
+        Encargos, sesiones y colaboraciones.<br>
+        Cuéntame tu idea y la ponemos en imagen.
+      </p>
+
+      <div class="contact-list">
+
+        <a href="mailto:gvfoto850@gmail.com" class="contact-row" aria-label="Enviar email">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-10 5L2 7"></path>
+            </svg>
+          </span>
+          <div class="contact-text">
+            <span class="contact-label">EMAIL</span>
+            <span class="contact-value">gvfoto850@gmail.com</span>
           </div>
+          <span class="contact-arrow" aria-hidden="true">→</span>
+        </a>
 
-          <div class="contactItem">
-            <span class="contactLabel">Instagram</span>
-            <a href="https://www.instagram.com/gv_foto_/" target="_blank" rel="noopener noreferrer" class="contactValue">
-              @gv_foto_
-            </a>
+        <a href="https://www.instagram.com/gv_foto_/" target="_blank" rel="noopener noreferrer" class="contact-row" aria-label="Abrir Instagram">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"></circle>
+            </svg>
+          </span>
+          <div class="contact-text">
+            <span class="contact-label">INSTAGRAM</span>
+            <span class="contact-value">@gv_foto_</span>
           </div>
+          <span class="contact-arrow" aria-hidden="true">→</span>
+        </a>
 
-          <div class="contactItem">
-            <span class="contactLabel">Teléfono</span>
-            <a href="tel:+34605413204" class="contactValue">
-              605 41 32 04
-            </a>
+        <a href="tel:+34605413204" class="contact-row" aria-label="Llamar por teléfono">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </span>
+          <div class="contact-text">
+            <span class="contact-label">TELÉFONO</span>
+            <span class="contact-value">605 41 32 04</span>
           </div>
+          <span class="contact-arrow" aria-hidden="true">→</span>
+        </a>
 
-        </div>
       </div>
 
-    </section>
+    </div>
+
   </main>
 
-  <audio id="clickSound" src="click.mp3"></audio>
+  <audio id="clickSound" src="/click.mp3" preload="none"></audio>
 
   <script>
     document.querySelectorAll("a").forEach(link => {
