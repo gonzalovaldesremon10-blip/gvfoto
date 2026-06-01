@@ -927,13 +927,13 @@ body.gallery-bento-page main{
   display:flex;
   flex-direction:column;
   min-height:0;             /* permite que los hijos se compriman */
-  padding-top:70px;         /* deja sitio para el header fijo */
+  padding-top:30px;         /* deja sitio para el header fijo */
 }
 
 /* Intro con título grande */
 .gallery-intro{
   flex:0 0 auto;
-  padding:0.5rem 2.5rem 0.6rem;
+  padding:0 2.5rem 0.6rem;
   text-align:center;
 }
 .gallery-intro h1{
