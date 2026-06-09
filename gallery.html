@@ -22,6 +22,69 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="/styles.css">
+  <!-- Bento galeria (8 categorias) -->
+  <style>
+    .gv-bento{
+      display:grid; gap:8px; padding:1rem 2.5rem 2.5rem;
+      grid-template-columns:repeat(4,1fr);
+      grid-template-rows:repeat(4,minmax(180px,22vh));
+      grid-template-areas:
+        "a a b c"
+        "a a d e"
+        "f g h h"
+        "f g h h";
+    }
+    .gv-card{
+      position:relative; overflow:hidden; cursor:pointer;
+      background:#0a3a36; text-decoration:none; color:#f5f1e8; isolation:isolate; display:block;
+    }
+    .gv-card img{
+      position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+      transition:transform 1.2s cubic-bezier(.2,.7,.2,1), filter .6s;
+      filter:brightness(.78) saturate(1.05);
+    }
+    .gv-card::after{
+      content:""; position:absolute; inset:0; z-index:1;
+      background:linear-gradient(to top, rgba(11,74,69,.85) 0%, rgba(11,74,69,.15) 50%, transparent 100%);
+      transition:opacity .5s;
+    }
+    .gv-label{ position:absolute; left:1.25rem; bottom:1.1rem; z-index:2; }
+    .gv-num{ display:block; font-size:.7rem; letter-spacing:.35em; opacity:.7; margin-bottom:.35rem; font-weight:300; }
+    .gv-name{ font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(1.1rem,1.7vw,1.8rem); letter-spacing:.04em; line-height:1; }
+    .gv-card:hover img{ transform:scale(1.06); filter:brightness(.9) saturate(1.1); }
+    .gv-card:hover::after{ opacity:.7; }
+    .gv-card.feature .gv-name{ font-size:clamp(2rem,3.2vw,3.4rem); }
+    .c-1{grid-area:a;} .c-2{grid-area:b;} .c-3{grid-area:c;} .c-4{grid-area:d;}
+    .c-5{grid-area:e;} .c-6{grid-area:f;} .c-7{grid-area:g;} .c-8{grid-area:h;}
+    @media (max-width:1024px){
+      .gv-bento{
+        grid-template-columns:repeat(3,1fr);
+        grid-template-rows:repeat(5,minmax(170px,22vh));
+        grid-template-areas:
+          "a a b"
+          "a a c"
+          "d e f"
+          "g h h"
+          "g h h";
+      }
+    }
+    @media (max-width:640px){
+      .gv-bento{
+        padding:.75rem 1.25rem 1.5rem; gap:6px;
+        grid-template-columns:repeat(2,1fr);
+        grid-template-rows:repeat(7,minmax(150px,20vh));
+        grid-template-areas:
+          "a a"
+          "a a"
+          "b c"
+          "d e"
+          "f g"
+          "h h"
+          "h h";
+      }
+    }
+  </style>
+
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,86 +113,65 @@
       <p>Siete miradas · un mismo lente</p>
     </section>
 
-    <section class="bento" aria-label="Categorías de galería">
-
-      <a href="/automovilismo.html" class="bento-card bento-feature bento-1" aria-label="Ir a Automovilismo">
+    <section class="gv-bento" aria-label="Categorías de galería">
+      <a href="/automovilismo.html" class="gv-card c-1 feature" aria-label="Ir a Automovilismo">
         <picture>
           <source media="(min-width: 1200px)" srcset="/FOTOS/AUTOMOVILISMO/foto 1-large.webp" type="image/webp">
           <source media="(min-width: 600px)" srcset="/FOTOS/AUTOMOVILISMO/foto 1-medium.webp" type="image/webp">
           <img src="/FOTOS/AUTOMOVILISMO/foto 1-small.webp" alt="Automovilismo" loading="eager" decoding="async">
         </picture>
-        <span class="bento-label">
-          <span class="bento-num">01</span>
-          <span class="bento-name">Automovilismo</span>
-        </span>
+        <span class="gv-label"><span class="gv-num">01</span><span class="gv-name">Automovilismo</span></span>
       </a>
-
-      <a href="/caballos.html" class="bento-card bento-2" aria-label="Ir a Caballos">
+      <a href="/caballos.html" class="gv-card c-2" aria-label="Ir a Caballos">
         <picture>
           <source media="(min-width: 600px)" srcset="/FOTOS/CABALLOS/caballo 3-medium.webp" type="image/webp">
           <img src="/FOTOS/CABALLOS/caballo 3-small.webp" alt="Caballos" loading="lazy" decoding="async">
         </picture>
-        <span class="bento-label">
-          <span class="bento-num">02</span>
-          <span class="bento-name">Caballos</span>
-        </span>
+        <span class="gv-label"><span class="gv-num">02</span><span class="gv-name">Caballos</span></span>
       </a>
-
-      <a href="/clasicos.html" class="bento-card bento-3" aria-label="Ir a Clásicos">
+      <a href="/clasicos.html" class="gv-card c-3" aria-label="Ir a Clásicos">
         <picture>
           <source media="(min-width: 600px)" srcset="/FOTOS/CLASICOS/clasicos64-medium.webp" type="image/webp">
           <img src="/FOTOS/CLASICOS/clasicos64-small.webp" alt="Clásicos" loading="lazy" decoding="async">
         </picture>
-        <span class="bento-label">
-          <span class="bento-num">03</span>
-          <span class="bento-name">Clásicos</span>
-        </span>
+        <span class="gv-label"><span class="gv-num">03</span><span class="gv-name">Clásicos</span></span>
       </a>
-
-      <a href="/deportivos.html" class="bento-card bento-4" aria-label="Ir a Deportivos">
+      <a href="/deportivos.html" class="gv-card c-4" aria-label="Ir a Deportivos">
         <picture>
           <source media="(min-width: 600px)" srcset="/FOTOS/DEPORTIVOS/deportivos1-medium.webp" type="image/webp">
           <img src="/FOTOS/DEPORTIVOS/deportivos1-small.webp" alt="Deportivos" loading="lazy" decoding="async">
         </picture>
-        <span class="bento-label">
-          <span class="bento-num">04</span>
-          <span class="bento-name">Deportivos</span>
-        </span>
+        <span class="gv-label"><span class="gv-num">04</span><span class="gv-name">Deportivos</span></span>
       </a>
-
-      <a href="/motociclismo.html" class="bento-card bento-5" aria-label="Ir a Motociclismo">
+      <a href="/motociclismo.html" class="gv-card c-5" aria-label="Ir a Motociclismo">
         <picture>
           <source media="(min-width: 600px)" srcset="/FOTOS/MOTOCICLISMO/moto 18-medium.webp" type="image/webp">
           <img src="/FOTOS/MOTOCICLISMO/moto 18-small.webp" alt="Motociclismo" loading="lazy" decoding="async">
         </picture>
-        <span class="bento-label">
-          <span class="bento-num">05</span>
-          <span class="bento-name">Motociclismo</span>
-        </span>
+        <span class="gv-label"><span class="gv-num">05</span><span class="gv-name">Motociclismo</span></span>
       </a>
-
-      <a href="/toros.html" class="bento-card bento-6" aria-label="Ir a Toros">
+      <a href="/toros.html" class="gv-card c-6" aria-label="Ir a Toros">
         <picture>
           <source media="(min-width: 600px)" srcset="/FOTOS/TOROS/toro 14-medium.webp" type="image/webp">
           <img src="/FOTOS/TOROS/toro 14-small.webp" alt="Toros" loading="lazy" decoding="async">
         </picture>
-        <span class="bento-label">
-          <span class="bento-num">06</span>
-          <span class="bento-name">Toros</span>
-        </span>
+        <span class="gv-label"><span class="gv-num">06</span><span class="gv-name">Toros</span></span>
       </a>
-
-      <a href="/urbana.html" class="bento-card bento-7" aria-label="Ir a Urbana">
+      <a href="/urbana.html" class="gv-card c-7" aria-label="Ir a Urbana">
         <picture>
           <source media="(min-width: 600px)" srcset="/FOTOS/URBANA/urbana15-medium.webp" type="image/webp">
           <img src="/FOTOS/URBANA/urbana15-small.webp" alt="Urbana" loading="lazy" decoding="async">
         </picture>
-        <span class="bento-label">
-          <span class="bento-num">07</span>
-          <span class="bento-name">Urbana</span>
-        </span>
+        <span class="gv-label"><span class="gv-num">07</span><span class="gv-name">Urbana</span></span>
       </a>
-
+      <a href="/pamplona.html" class="gv-card c-8 feature" aria-label="Ir a Pamplona">
+        <picture>
+          <source media="(min-width: 1200px)" srcset="/FOTOS/PAMPLONA/Pamplona-87-large.webp" type="image/webp">
+          <source media="(min-width: 600px)" srcset="/FOTOS/PAMPLONA/Pamplona-87-medium.webp" type="image/webp">
+          <img src="/FOTOS/PAMPLONA/Pamplona-87-small.webp" alt="Pamplona" loading="lazy" decoding="async">
+        </picture>
+        <span class="gv-label"><span class="gv-num">08</span><span class="gv-name">Pamplona</span></span>
+      </a>
     </section>
   </main>
 
